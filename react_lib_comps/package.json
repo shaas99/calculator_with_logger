@@ -1,8 +1,22 @@
 {
   "name": "react_lib_comps",
-  "private": true,
+
   "version": "0.0.0",
   "type": "module",
+
+  "main": "./dist/react_lib_comps.umd.cjs",
+  "module": "./dist/react_lib_comps.js",
+  "types": "./dist/index.d.tsx",
+  "exports": {
+    ".": {
+      "import": "./dist/react_lib_comps.js",
+      "require": "./dist/react_lib_comps.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
