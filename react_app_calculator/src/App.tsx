@@ -3,10 +3,28 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import reactLogo from './assets/react.svg'
 import './App.css'
-// import Button from './components/Button'
-// import TextField from './components/TextField'
+import {Button, TextField} from 'react_lib_comps'         // components from react components library
+import { logging, LogEntry } from 'ts_lib_logger';        // logger from ts logging library
+import { add, subs, mult, div} from 'ts_lib_operations'  // operations from ts operations library
 
-import {Button, TextField} from 'react_lib_comps'
+
+
+// Configuring the logger
+logging         
+  .configure({
+    minLevels: {
+      '': 'info',
+    'App': 'trace'
+    }
+  })
+  .registerConsoleLogger();
+
+
+const logger = logging.getLogger('App');                   // initializing the instance of logger
+
+logger.info(`This is INITIAL info log of application`);
+logger.trace(`This is INITIAL trace log of application`);
+
 
 function App() {
   
@@ -15,20 +33,29 @@ function App() {
   const [total, setTotal] = useState(0);
 
   function ClickButton() {
-    setTotal(input1+input2);
+    // setTotal(input1+input2);
+    setTotal(add(input1, input2));
   }
 
   function ClickButton2() {
-    setTotal(input1-input2);
+    // setTotal(input1-input2);
+    setTotal(subs(input1, input2));
+
   }
 
   function ClickButton3() {
-    setTotal(input1*input2);
+    // setTotal(input1*input2);
+    setTotal(mult(input1, input2));
+
   }
 
   function ClickButton4() {
-    setTotal(input1/input2);
+    // setTotal(input1/input2);
+    setTotal(div(input1, input2));
+
   }
+  
+  logger.info(`The total is changed to ${total} and is rendered`);
 
   return (
     <div>
@@ -46,3 +73,7 @@ function App() {
 }
 
 export default App
+
+
+logger.info(`This is END info log of application`);
+logger.trace(`This is END trace log of application`);
