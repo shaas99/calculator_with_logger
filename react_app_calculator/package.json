@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react_lib_comps": "file:../calculator_with_logger/react_lib_comps/react_lib_comps-0.0.0.tgz",
-    "react-dom": "^18.2.0"
+    "react_lib_comps": "file:../react_lib_comps/react_lib_comps-0.0.0.tgz",
+    "react-dom": "^18.2.0",
+    "ts_lib_logger": "file:../ts_lib_logger/ts_lib_logger-0.0.0.tgz",
+    "ts_lib_operations": "file:../ts_lib_operations/ts_lib_operations-0.0.0.tgz"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
