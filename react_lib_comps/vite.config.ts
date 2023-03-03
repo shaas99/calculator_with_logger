@@ -10,8 +10,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'my-lib',
-      fileName: 'my-lib',
+      name: 'react_lib_comps',
+      fileName: 'react_lib_comps',
     },
   },
   plugins: [react(), dts()],
